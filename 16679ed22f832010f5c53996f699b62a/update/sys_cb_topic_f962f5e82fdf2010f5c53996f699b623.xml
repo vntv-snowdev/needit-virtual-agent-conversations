@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>Enables users to request a live agent.</description>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{"graph_api_version":"1.0.21.pp4","variables":{"3c13e0426bb348c2bc2a43f5c4ebcbb7":{"id":"3c13e0426bb348c2bc2a43f5c4ebcbb7","name":"user_chooses_an_option","label":"User Chooses An Option","varType":"boolean","category":"vaInputs"},"6d14f37237304bf491cc58a94cdd9b65":{"category":"vaInputs","id":"6d14f37237304bf491cc58a94cdd9b65","label":"User","name":"user","table":"sys_user","varType":"reference"}},"goals":{"primary":{"id":"primary","trigger":{"type":"primary"},"name":"primary","applicability":"","description":"","nodes":{"3e24e4c9e6ad433e867c2beec5cc091e":{"id":"3e24e4c9e6ad433e867c2beec5cc091e","stepType":"Start","name":"Start","greetingResponse":{"mode":"simple","value":""}},"b2d0e47b00b141bd978ca4052d582378":{"id":"b2d0e47b00b141bd978ca4052d582378","stepType":"TerminateGoal","name":"End","confirmationMessage":{"mode":"simple","value":""}},"009c4b09361c4cceb32412931c294538":{"id":"009c4b09361c4cceb32412931c294538","name":"Connect To Agent","script":"(function execute() {\n    vaSystem.connectToAgent();\n})()\n","stepType":"ScriptAction","applicability":{"value":"","mode":"query"}},"0975c723db7347aba486bf51674632ba":{"id":"0975c723db7347aba486bf51674632ba","stepType":"Decision","name":"Decision"},"8d3bab0b6408457696983fff19151125":{"id":"8d3bab0b6408457696983fff19151125","stepType":"Prompt","name":"User chooses an option","prompt":{"value":"Let's see if I got this right. Do you want me to connect you to an agent?","mode":"simple"},"confirmMessage":{"value":"","mode":"simple"},"acknowledgeMsg":{"value":"","mode":"simple"},"applicability":{"value":"","mode":"query"},"optional":false,"defaultValue":{"value":"","mode":"simple"},"withNluUserInput":false,"skipIfFulfilled":false,"entity":{"id":""},"variableId":"3c13e0426bb348c2bc2a43f5c4ebcbb7","skippable":{"value":"","mode":"query"}}},"edges":[{"id":"b9d4dade933c4ac79302476b12fe0255","edgeType":"Edge","source":"3e24e4c9e6ad433e867c2beec5cc091e","target":"8d3bab0b6408457696983fff19151125","sourcePort":"","targetPort":""},{"id":"40bb3987a44c4c1288889623eb7d2627","edgeType":"Branch","source":"0975c723db7347aba486bf51674632ba","target":"009c4b09361c4cceb32412931c294538","sourcePort":"","targetPort":"","expression":{"value":"user_chooses_an_option=true","mode":"query"},"label":"Yes"},{"id":"9aad94a85fc7476e9d8311a9ef50645e","edgeType":"Edge","source":"009c4b09361c4cceb32412931c294538","target":"b2d0e47b00b141bd978ca4052d582378","sourcePort":"","targetPort":""},{"id":"075e9958e1cb402696f5ab8fc9f4cbbf","edgeType":"Branch","source":"0975c723db7347aba486bf51674632ba","target":"b2d0e47b00b141bd978ca4052d582378","sourcePort":"","targetPort":"","expression":{"value":"user_chooses_an_option=","mode":"query"},"label":"No"},{"id":"775ae328b7684175921731f7293ad9fd","edgeType":"Edge","source":"8d3bab0b6408457696983fff19151125","target":"0975c723db7347aba486bf51674632ba","sourcePort":"","targetPort":""}]}}}</graph>
+        <key_phrases/>
+        <library>true</library>
+        <live_agent>false</live_agent>
+        <name>Transfer to Live Agent - Demo</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <roles/>
+        <source_topic_id>2ad78361b3633300dbbf6030c6a8dc14</source_topic_id>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-31 14:21:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>f962f5e82fdf2010f5c53996f699b623</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Transfer to Live Agent - Demo</sys_name>
+        <sys_package display_value="NeedIt Virtual Agent Conversations" source="x_491952_needit_vi">16679ed22f832010f5c53996f699b62a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt Virtual Agent Conversations">16679ed22f832010f5c53996f699b62a</sys_scope>
+        <sys_update_name>sys_cb_topic_f962f5e82fdf2010f5c53996f699b623</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-03-31 14:21:38</sys_updated_on>
+        <type>TOPIC_BLOCK</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=f962f5e82fdf2010f5c53996f699b623"/>
+</record_update>
